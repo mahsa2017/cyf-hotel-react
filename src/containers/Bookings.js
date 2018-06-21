@@ -7,7 +7,13 @@ export default class Bookings extends Component {
   search = () => {
     console.info('TO DO!');
   };
+  constructor(props){
+    super(props)
+    this.state = {
+      
+    }
 
+  }
   render() {
     let abcd = FakeBookings;
     console.log(abcd);
