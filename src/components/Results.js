@@ -3,14 +3,13 @@ import moment from 'moment';
 
 class Results extends Component {
     render() {
-        const styles = {
-            
+        const styles = {     
                 border: 1,
                 textAlign: 'center',
                 padding: 10,
         }
-        const abcd = this.props.abc
-        console.log(abcd);
+        // const abcd = this.props.abc
+        // console.log(abcd);
         return (
             <div>
                 <table>
@@ -44,6 +43,7 @@ class TableRow extends Component {
             textAlign: 'center',
             padding: 10
     }
+    
         return (
             <tr style={styles}>
                 <td >{this.props.data.title} </td>
@@ -55,7 +55,7 @@ class TableRow extends Component {
                 <td>{this.props.data.checkOutDate}</td>
                 
                 <td>{moment(this.props.data.checkOutDate).diff(this.props.data.checkInDate, 'days')} days</td>
-                <td>{moment(this.props.data.checkOuDate).diff(this.props.data.checkInDate, 'days')}</td> 
+                <td>{moment(this.props.data.checkOuDate).diff(this.props.data.checkInDate, 'days')}</td> //false
             </tr>
         );
 
