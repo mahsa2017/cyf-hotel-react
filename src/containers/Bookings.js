@@ -26,12 +26,6 @@ export default class Bookings extends Component {
         return this.state.data;
       }
     }
-  // findResult(FakeBookings) {
-  //  for(var i=0;i<FakeBookings.length;i++){
-  //    if(a === FakeBookings[i].id)
-  //    return a;
-  //  }   
-  // }
   render() {
     let abcd = FakeBookings;
     console.log(abcd);

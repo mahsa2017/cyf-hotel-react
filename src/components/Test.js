@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
-const filterCallBack = (person, id) => {
-    return person.id === id;
-}
-
+// const filterCallBack = (person, id) => {
+//     return person.id === id;
+// }
 // class AnotherClass {
 //     Test.searchById()  // inside the call, `this` would refer to AnotherClass, and NOT Test
 //     Test.searchById // test,getFilteredData. anotherClass.getFitleredData
 // }
-
 class Test extends Component {
     constructor(props) {
         super(props)
@@ -17,16 +15,22 @@ class Test extends Component {
             filteredData: this.props.datas
         }
     }
-   
     getFilteredData(id) {
-        const filterData = this.props.datas.filter(person => {
-            return person.id === id;
-        });
-        return filterData;
+        console.log('filter', id, id !== '')
+        if (id !== '') {
+            const filterData = this.props.datas.filter(person => {
+                return person.id === parseInt(id,10);
+            });
+            return filterData;}
+        else {
+            // console.log(this.props.datas,"mmmmmmmm")
+            return this.props.datas;
+        }
     }
-
     searchById(e) {
-        const id = parseInt(e.target.value, 10);
+        const id = e.target.value;
+        // console.log(id);
+        // const id = parseInt(e.target.value, 10);
         const filterData = this.getFilteredData(id);
         console.log(filterData);
         this.setState({
@@ -34,7 +38,7 @@ class Test extends Component {
         })
     }
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         const filterData = this.state.filteredData;
         return (
             <div>
@@ -46,6 +50,5 @@ class Test extends Component {
             </div>
         )
     }
-
 }
 export default Test;

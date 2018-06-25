@@ -3,26 +3,21 @@ import moment from 'moment';
 
 class Results extends Component {
     render() {
-        const styles = {     
-                border: 1,
-                textAlign: 'center',
-                padding: 10,
-        }
         // const abcd = this.props.abc
         // console.log(abcd);
         return (
             <div>
-                <table>
+                <table className="table search-table">
                     <thead>
                         <tr>
-                            <th style={styles}>Title</th>
-                            <th style={styles}>First Name </th>
-                            <th style={styles}>Surname</th>
-                            <th style={styles}>Email</th>
-                            <th style={styles}>Room id </th>
-                            <th style={styles}>Check in date</th>
-                            <th style={styles}>Check out date</th>
-                            <th style={styles}>Number of staying days</th>
+                            <th>Title</th>
+                            <th>First Name </th>
+                            <th>Surname</th>
+                            <th>Email</th>
+                            <th>Room id </th>
+                            <th>Check in date</th>
+                            <th>Check out date</th>
+                            <th>Number of staying days</th>
 
                         </tr>
                     </thead>
@@ -33,19 +28,12 @@ class Results extends Component {
                 </table>
             </div>
         );
-
     }
 }
 class TableRow extends Component {
     render() {
-        const styles = {
-            border: 1,
-            textAlign: 'center',
-            padding: 10
-    }
-    
         return (
-            <tr style={styles}>
+            <tr>
                 <td >{this.props.data.title} </td>
                 <td>{this.props.data.firstName}</td>
                 <td>{this.props.data.surname}</td>
@@ -53,14 +41,10 @@ class TableRow extends Component {
                 <td>{this.props.data.roomId}</td>
                 <td>{this.props.data.checkInDate}</td>
                 <td>{this.props.data.checkOutDate}</td>
-                
                 <td>{moment(this.props.data.checkOutDate).diff(this.props.data.checkInDate, 'days')} days</td>
                 <td>{moment(this.props.data.checkOuDate).diff(this.props.data.checkInDate, 'days')}</td> //false
             </tr>
         );
-
     }
-
 }
-
 export default Results;
