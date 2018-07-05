@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Search from '../components/Search.js';
 import Results from '../components/Results.js';
 import FakeBookings from '../data/fakeBookings.json';
-import Test from '../components/Test.js';
 
 export default class Bookings extends Component {
   search = () => {
@@ -12,7 +11,7 @@ export default class Bookings extends Component {
     super(props)
     this.state = {
       searchId: "",
-    filteredData:  FakeBookings
+    filteredData:  FakeBookings,
     }
   }
   setSearch = (ev) => {
@@ -47,14 +46,14 @@ export default class Bookings extends Component {
     }
   }
   render() {
-    const { filteredData } = this.state;
+    //const { filteredData } = this.state;
     let abcd = FakeBookings;
     console.log(abcd);
     return (
       <div className="App-content">
         <div className="container">
           <Search setSearch={this.setSearch} searchId={this.state.searchId} searchById={this.searchById} />
-          <Results data={this.state.filteredData} />
+          <Results datas={this.state.filteredData} />
         </div>
       </div>
     );

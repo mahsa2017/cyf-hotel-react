@@ -2,10 +2,6 @@ import React from 'react';
 import Button from './Button'
 
 const Search = props => {
-  // function searchById(e) 
-  // {
-  //   return e.target.value; 
-  // }
   return(
   <div className="search">
     <div className="page-header">
