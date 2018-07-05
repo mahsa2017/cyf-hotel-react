@@ -2,10 +2,10 @@ import React from 'react';
 import Button from './Button'
 
 const Search = props => {
-  function searchById(e) 
-  {
-    return e.target.value; 
-  }
+  // function searchById(e) 
+  // {
+  //   return e.target.value; 
+  // }
   return(
   <div className="search">
     <div className="page-header">
@@ -16,8 +16,8 @@ const Search = props => {
         <div className="form-group search-box">
           <label htmlFor="customerId">Customer Id</label>
           <div className="search-row">
-            <input type="text" id="customerId" className="form-control" placeholder="Customer Id" onChange={searchById} />
-            < Button name="search by id" searchId = {this.searchById}/>
+            <input type="text" id="customerId" className="form-control" placeholder="Customer Id" value={props.searchId} onChange={props.setSearch} />
+            < Button name="search by id" clickState={props.searchById}/>
           </div>
         </div>
       </div>

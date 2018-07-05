@@ -3,8 +3,6 @@ import moment from 'moment';
 
 class Results extends Component {
     render() {
-        // const abcd = this.props.abc
-        // console.log(abcd);
         return (
             <div>
                 <table className="table search-table">
@@ -18,11 +16,10 @@ class Results extends Component {
                             <th>Check in date</th>
                             <th>Check out date</th>
                             <th>Number of staying days</th>
-
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.abc.map((person, i) => <TableRow key={i}
+                        {this.props.data.map((person, i) => <TableRow key={i}
                             data={person} />)}
                     </tbody>
                 </table>
@@ -42,7 +39,6 @@ class TableRow extends Component {
                 <td>{this.props.data.checkInDate}</td>
                 <td>{this.props.data.checkOutDate}</td>
                 <td>{moment(this.props.data.checkOutDate).diff(this.props.data.checkInDate, 'days')} days</td>
-                <td>{moment(this.props.data.checkOuDate).diff(this.props.data.checkInDate, 'days')}</td> //false
             </tr>
         );
     }

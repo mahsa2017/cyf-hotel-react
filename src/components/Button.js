@@ -4,7 +4,7 @@ class Button extends Component  {
     render(){
         return(
             <div>
-               <button className="btn btn-primary fn-submit-name" onClick={this.searchId}>{this.props.name}</button>
+               <button className="btn btn-primary fn-submit-name" onClick={this.props.clickState}>{this.props.name}</button>
                 </div>
         )
     }
