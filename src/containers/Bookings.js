@@ -86,8 +86,7 @@ export default class Bookings extends Component {
         <div className="container">
           <Search setSearchId={this.setSearchId} searchId={this.state.searchId} searchById={this.searchById} 
           setSearchName={this.setSearchName}
-          searchName={this.state.searchName} searchByName={this.searchByName}
-          />
+          searchName={this.state.searchName} searchByName={this.searchByName} />
           <Results datas={this.state.filteredData} />
         </div>
       </div>
