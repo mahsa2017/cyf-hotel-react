@@ -11,8 +11,7 @@ class Results extends Component {
                        <TableHead />
                     </thead>
                     <tbody>
-                        {this.props.datas.map((person, i) => <TableRow key={i}
-                            data={person} />)}
+                        {this.props.datas.map((person,key) => <TableRow key={key} info={person} />)}
                     </tbody>
                 </table>
             </div>

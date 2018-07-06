@@ -5,14 +5,14 @@ class TableRow extends Component {
     render() {
         return (
             <tr>
-                <td >{this.props.data.title} </td>
-                <td>{this.props.data.firstName}</td>
-                <td>{this.props.data.surname}</td>
-                <td>{this.props.data.email}</td>
-                <td>{this.props.data.roomId}</td>
-                <td>{this.props.data.checkInDate}</td>
-                <td>{this.props.data.checkOutDate}</td>
-                <td>{moment(this.props.data.checkOutDate).diff(this.props.data.checkInDate, 'days')} days</td>
+                <td >{this.props.info.title} </td>
+                <td>{this.props.info.firstName}</td>
+                <td>{this.props.info.surname}</td>
+                <td>{this.props.info.email}</td>
+                <td>{this.props.info.roomId}</td>
+                <td>{this.props.info.checkInDate}</td>
+                <td>{this.props.info.checkOutDate}</td>
+                <td>{moment(this.props.info.checkOutDate).diff(this.props.info.checkInDate, 'days')} days</td>
             </tr>
         );
     }

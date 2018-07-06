@@ -11,21 +11,39 @@ export default class Bookings extends Component {
     super(props)
     this.state = {
       searchId: "",
+      searchName:"",
     filteredData:  FakeBookings,
     }
   }
-  setSearch = (ev) => {
+  setSearchId = (ev) => {
     const searchId  = ev.target.value;
     console.log(searchId)
     this.setState({
         searchId
     })
   } 
+  setSearchName = (ev) => {
+    const searchName = ev.target.value;
+    console.log(searchName)
+    this.setState({
+        searchName
+    })
+  } 
   searchById = (e) => {
-    console.log("hiiiiiii")
+    console.log("hiiiiiii Id")
     const { searchId } = this.state
     console.log({searchId})
     const filteredData = this.getFilteredDataById(searchId);
+    // console.log(filteredData);
+    this.setState({
+        filteredData: filteredData
+    })
+  }
+  searchByName = (e) => {
+    console.log("hiiiiiii Name")
+    const { searchName } = this.state
+    console.log({searchName})
+    const filteredData = this.getFilteredDataByName(searchName);
     // console.log(filteredData);
     this.setState({
         filteredData: filteredData
@@ -45,6 +63,20 @@ export default class Bookings extends Component {
         return filteredData;
     }
   }
+  getFilteredDataByName = (name) => {
+    // console.log('filter', id, id !== '')
+    const { filteredData } = this.state;
+    if (name !== '') {
+        const returnData = filteredData.filter(person => {
+            return (person.firstName + " " + person.surname)  === this.state.searchName;
+        });
+        return returnData;
+    }
+    else {
+        // console.log(this.props.datas,"mmmmmmmm")
+        return filteredData;
+    }
+  }
   render() {
     //const { filteredData } = this.state;
     let abcd = FakeBookings;
@@ -52,7 +84,10 @@ export default class Bookings extends Component {
     return (
       <div className="App-content">
         <div className="container">
-          <Search setSearch={this.setSearch} searchId={this.state.searchId} searchById={this.searchById} />
+          <Search setSearchId={this.setSearchId} searchId={this.state.searchId} searchById={this.searchById} 
+          setSearchName={this.setSearchName}
+          searchName={this.state.searchName} searchByName={this.searchByName}
+          />
           <Results datas={this.state.filteredData} />
         </div>
       </div>
