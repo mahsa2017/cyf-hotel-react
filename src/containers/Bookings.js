@@ -12,7 +12,7 @@ export default class Bookings extends Component {
     this.state = {
       searchId: "",
       searchName:"",
-    filteredData:  FakeBookings,
+     filteredData:  FakeBookings,
     }
   }
   setSearchId = (ev) => {
@@ -51,7 +51,8 @@ export default class Bookings extends Component {
   }
   getFilteredDataById = (id) => {
     // console.log('filter', id, id !== '')
-    const { filteredData } = this.state;
+    console.log(id);
+    let { filteredData } = this.state;
     if (id !== '') {
         const returnData = filteredData.filter(person => {
             return person.id === parseInt(id, 10);
@@ -60,12 +61,12 @@ export default class Bookings extends Component {
     }
     else {
         // console.log(this.props.datas,"mmmmmmmm")
-        return filteredData;
+        return FakeBookings;
     }
   }
   getFilteredDataByName = (name) => {
     // console.log('filter', id, id !== '')
-    const { filteredData } = this.state;
+    let { filteredData } = this.state;
     if (name !== '') {
         const returnData = filteredData.filter(person => {
             return (person.firstName + " " + person.surname)  === this.state.searchName;
@@ -74,7 +75,7 @@ export default class Bookings extends Component {
     }
     else {
         // console.log(this.props.datas,"mmmmmmmm")
-        return filteredData;
+        return FakeBookings;
     }
   }
   render() {
